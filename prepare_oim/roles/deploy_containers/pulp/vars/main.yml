@@ -25,7 +25,7 @@ device_name: "/dev/fuse:/dev/fuse:rwm"
 pulp_container_name: "pulp"
 pulp_protocol_https: true
 # Tag is fixed for the Pulp container image as of 10-06-2025
-pulp_image: "docker.io/pulp/pulp:3.113"
+pulp_image: "docker.io/pulp/pulp:3.114.2"
 
 # Usage: deployment_prereq.yml - pull image retries
 pull_image_retries: 5
@@ -138,7 +138,6 @@ generate_cert_cmd: >
   -addext {{ cert_san }}
 
 pulp_cert_src: "/opt/omnia/pulp/settings/certs/pulp_webserver.crt"
-ca_trust_path: "/etc/pki/ca-trust/source/anchors/"
 
 # Usage: reload_pulp_nginx.yml
 nginx_reload_cmd: "nginx -s reload"
